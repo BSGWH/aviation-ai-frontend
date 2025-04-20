@@ -55,7 +55,6 @@ export default function ChatPage() {
     setIsLoading(true);
 
     try {
-      // Replace with your FastAPI endpoint
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
         method: "POST",
         headers: {
@@ -71,7 +70,7 @@ export default function ChatPage() {
       // Add assistant response to chat
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: data.response, // Adjust based on your API response structure
+        content: data.response,
         role: "assistant",
         timestamp: new Date(),
       };
